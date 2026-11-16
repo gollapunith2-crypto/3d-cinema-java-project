@@ -1,0 +1,14 @@
+[
+  {
+    "id": "mumbai",
+    "name": "CineGalaxy IMAX",
+    "location": "Lower Parel, Mumbai",
+    "showtimes": ["10:30 AM", "02:15 PM", "08:15 PM"]
+  },
+  {
+    "id": "ny",
+    "name": "Lumière Grand",
+    "location": "Lincoln Square, New York",
+    "showtimes": ["12:00 PM", "04:30 PM", "09:45 PM"]
+  }
+]

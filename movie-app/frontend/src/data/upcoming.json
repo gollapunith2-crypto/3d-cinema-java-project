@@ -1,0 +1,18 @@
+[
+  {
+    "id": "og",
+    "title": "OG",
+    "genre": "Action / Gangster",
+    "duration": "TBA",
+    "posterUrl": "/posters/og.jpg",
+    "trailerUrl": "29C2crcXn-E"
+  },
+  {
+    "id": "spirit",
+    "title": "Spirit",
+    "genre": "Action / Cop Drama",
+    "duration": "TBA",
+    "posterUrl": "/posters/spirit.jpg",
+    "trailerUrl": "VCGVPiD4BP0"
+  }
+]

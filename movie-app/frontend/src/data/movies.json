@@ -1,0 +1,26 @@
+[
+  {
+    "id": "kalki",
+    "title": "Kalki 2898 AD",
+    "genre": "Sci-Fi / Action",
+    "duration": "3h 1m",
+    "posterUrl": "/posters/kalki.jpg",
+    "trailerUrl": "y1-w1kUGuz8"
+  },
+  {
+    "id": "pushpa2",
+    "title": "Pushpa 2: The Rule",
+    "genre": "Action / Thriller",
+    "duration": "3h 15m",
+    "posterUrl": "/posters/pushpa2.jpg",
+    "trailerUrl": "g3JUbgOHgdw"
+  },
+  {
+    "id": "devara",
+    "title": "Devara: Part 1",
+    "genre": "Action / Drama",
+    "duration": "2h 50m",
+    "posterUrl": "/posters/devara.jpg",
+    "trailerUrl": "5cx7rvMvAWo"
+  }
+]
