@@ -2687,6 +2687,468 @@
       /* ------------------------------------------------------------------ */
       /* Theatres — every hall is described by data and built procedurally   */
       /* ------------------------------------------------------------------ */
+      const DEFAULT_THEATRES = [
+        {
+          id: "mumbai",
+          name: "CineGalaxy IMAX, Mumbai",
+          short: "CineGalaxy IMAX",
+          area: "Lower Parel",
+          city: "Mumbai",
+          seed: 11,
+          curtainStyle: "pleat",
+          style: {
+            floorTex: "carpet",
+            wall: 0x17161d,
+            panel: 0x211f2a,
+            carpet: 0x1d1119,
+            cove: 0xffb168,
+            coveInt: 1.0,
+            step: 0xffc98f,
+            sconce: 0xffd2a0,
+            curtain: 0x571523,
+            ceiling: 0x121118,
+            screenGlowBoost: 1.0,
+            slats: false,
+            seatColors: {
+              standard: 0x571d24,
+              premium: 0x6e2626,
+              vip: 0x7c4a28,
+              couple: 0x6e2748,
+              accessible: 0x24425e,
+            },
+          },
+          stars: true,
+          screenW: 15.5,
+          rowSpacing: 1.5,
+          rise: 0.42,
+          curve: 1.4,
+          gapX: 0.72,
+          firstRowZ: -3.2,
+          seatLayout: "Concentric curved rows â€” no centre aisle, single sweep",
+          rows: [
+            { r: "A", blocks: [14], cat: "standard", price: 420, section: "Front" },
+            { r: "B", blocks: [16], cat: "standard", price: 420, section: "Front" },
+            {
+              r: "C",
+              blocks: [18],
+              cat: "standard",
+              price: 520,
+              section: "Orchestra",
+            },
+            {
+              r: "D",
+              blocks: [20],
+              cat: "standard",
+              price: 520,
+              section: "Orchestra",
+            },
+            {
+              r: "E",
+              blocks: [22],
+              cat: "standard",
+              price: 560,
+              section: "Orchestra",
+            },
+            {
+              r: "F",
+              blocks: [22],
+              cat: "premium",
+              price: 820,
+              section: "Premium",
+            },
+            {
+              r: "G",
+              blocks: [20],
+              cat: "premium",
+              price: 820,
+              section: "Premium",
+            },
+            {
+              r: "H",
+              blocks: [18],
+              cat: "premium",
+              price: 820,
+              section: "Premium",
+            },
+            {
+              r: "I",
+              blocks: [12],
+              cat: "vip",
+              price: 1450,
+              section: "Recliner",
+            },
+          ],
+          times: ["4:40 PM", "8:15 PM", "11:05 PM"],
+          defaultSeat: "E-11",
+        },
+
+        {
+          id: "ny",
+          name: "LumiÃ¨re Grand, New York",
+          short: "LumiÃ¨re Grand",
+          area: "Lincoln Square",
+          city: "New York",
+          seed: 23,
+          curtainStyle: "wave",
+          style: {
+            floorTex: "fabric",
+            floorTint: 0x5a1b26,
+            wallTex: "wood",
+            wallTint: 0x4a3324,
+            wallH: 3.4,
+            wall: 0x1a1216,
+            panel: 0x2b1c22,
+            carpet: 0x241019,
+            cove: 0xffc07a,
+            coveInt: 1.15,
+            step: 0xffd9a8,
+            sconce: 0xffdcb0,
+            curtain: 0x6d1b2c,
+            ceiling: 0x150f13,
+            screenGlowBoost: 1.1,
+            slats: false,
+            seatColors: {
+              standard: 0x5c2030,
+              premium: 0x74283a,
+              vip: 0x8a5a30,
+              couple: 0x772c50,
+              accessible: 0x24425e,
+            },
+          },
+          screenW: 17,
+          rowSpacing: 1.6,
+          rise: 0.44,
+          curve: 0.6,
+          gapX: 0.8,
+          firstRowZ: -3.0,
+          seatLayout: "Grand four-block orchestra â€” twin side sections + centre pair",
+          rows: [
+            {
+              r: "A",
+              blocks: [3, 8, 8, 3],
+              cat: "standard",
+              price: 520,
+              section: "Orchestra Front",
+            },
+            {
+              r: "B",
+              blocks: [3, 8, 8, 3],
+              cat: "standard",
+              price: 520,
+              section: "Orchestra Front",
+            },
+            {
+              r: "C",
+              blocks: [4, 9, 9, 4],
+              cat: "standard",
+              price: 640,
+              section: "Orchestra",
+            },
+            {
+              r: "D",
+              blocks: [4, 9, 9, 4],
+              cat: "premium",
+              price: 920,
+              section: "Orchestra",
+            },
+            {
+              r: "E",
+              blocks: [4, 9, 9, 4],
+              cat: "premium",
+              price: 920,
+              section: "Orchestra",
+            },
+            {
+              r: "F",
+              blocks: [4, 9, 9, 4],
+              cat: "premium",
+              price: 920,
+              section: "Grand Circle",
+            },
+            {
+              r: "G",
+              blocks: [4, 9, 9, 4],
+              cat: "vip",
+              price: 1680,
+              section: "Grand Circle",
+            },
+            {
+              r: "H",
+              blocks: [3, 8, 8, 3],
+              cat: "vip",
+              price: 1680,
+              section: "Grand Circle",
+            },
+          ],
+          times: ["3:20 PM", "7:00 PM", "10:30 PM"],
+          defaultSeat: "E-14",
+        },
+
+        {
+          id: "tokyo",
+          name: "Shibuya Prime Cinema, Tokyo",
+          short: "Shibuya Prime",
+          area: "Dogenzaka",
+          city: "Tokyo",
+          seed: 37,
+          curtainStyle: "rise",
+          style: {
+            floorTex: "wood",
+            floorTint: 0x9c7a4e,
+            wall: 0x4d3d2a,
+            panel: 0x866c48,
+            carpet: 0x2a2016,
+            cove: 0xffe3b0,
+            coveInt: 1.0,
+            step: 0xffe6bd,
+            sconce: 0xffe9c4,
+            curtain: 0x4a3826,
+            ceiling: 0x1d222b,
+            screenGlowBoost: 0.95,
+            slats: true,
+            balconies: true,
+            trim: 0xd8cfc0,
+            seatColors: {
+              standard: 0x7e1e2a,
+              premium: 0x8e2430,
+              vip: 0x99342e,
+              couple: 0x8a2a44,
+              accessible: 0x2e4a66,
+            },
+          },
+          balconyLevels: [
+            { y: 4.6, depth: 3.7 },
+            { y: 8.0, depth: 3.5 },
+          ],
+          balconyCurve: 0.6,
+          hallH: 14,
+          screenW: 15,
+          rowSpacing: 1.5,
+          rise: 0.36,
+          curve: 0.3,
+          gapX: 0.82,
+          firstRowZ: -3.2,
+          seatLayout:
+            "Grand three-tier auditorium â€” big orchestra under two deep balconies",
+          rows: [
+            {
+              r: "A",
+              blocks: [6, 14, 6],
+              cat: "standard",
+              price: 900,
+              section: "Orchestra",
+            },
+            {
+              r: "B",
+              blocks: [6, 14, 6],
+              cat: "standard",
+              price: 900,
+              section: "Orchestra",
+            },
+            {
+              r: "C",
+              blocks: [7, 14, 7],
+              cat: "standard",
+              price: 1100,
+              section: "Orchestra",
+            },
+            {
+              r: "D",
+              blocks: [7, 14, 7],
+              cat: "premium",
+              price: 1600,
+              section: "Orchestra",
+            },
+            {
+              r: "E",
+              blocks: [7, 14, 7],
+              cat: "premium",
+              price: 1600,
+              section: "Orchestra",
+            },
+            {
+              r: "F",
+              blocks: [6, 14, 6],
+              cat: "vip",
+              price: 3200,
+              section: "Premier",
+            },
+            {
+              r: "G",
+              blocks: [5, 14, 5],
+              cat: "couple",
+              price: 3600,
+              section: "Pair Premier",
+            },
+            {
+              r: "H",
+              blocks: [6, 14, 6],
+              cat: "premium",
+              price: 2400,
+              section: "Mezzanine",
+              balc: 0,
+            },
+            {
+              r: "I",
+              blocks: [6, 14, 6],
+              cat: "premium",
+              price: 2400,
+              section: "Mezzanine",
+              balc: 0,
+            },
+            {
+              r: "J",
+              blocks: [5, 14, 5],
+              cat: "standard",
+              price: 2000,
+              section: "Mezzanine",
+              balc: 0,
+            },
+            {
+              r: "K",
+              blocks: [5, 14, 5],
+              cat: "standard",
+              price: 1600,
+              section: "Upper Balcony",
+              balc: 1,
+            },
+            {
+              r: "L",
+              blocks: [5, 14, 5],
+              cat: "standard",
+              price: 1600,
+              section: "Upper Balcony",
+              balc: 1,
+            },
+            {
+              r: "M",
+              blocks: [5, 14, 5],
+              cat: "standard",
+              price: 1600,
+              section: "Upper Balcony",
+              balc: 1,
+            },
+          ],
+          times: ["1:10 PM", "5:45 PM", "9:20 PM"],
+          defaultSeat: "D-14",
+        },
+
+        {
+          id: "palace",
+          name: "The Regent Palace, Brooklyn",
+          short: "Regent Palace",
+          area: "Flatbush",
+          city: "New York",
+          seed: 54,
+          curtainStyle: "festoon",
+          style: {
+            floorTex: "carpet",
+            floorTint: 0x6e1622,
+            wall: 0x6a4a20,
+            panel: 0x8a6626,
+            carpet: 0x5a1220,
+            cove: 0xffd98a,
+            coveInt: 1.3,
+            step: 0xffe3b0,
+            sconce: 0xffce8a,
+            curtain: 0x6e0f1f,
+            ceiling: 0x2a1c10,
+            screenGlowBoost: 1.05,
+            slats: false,
+            palace: true,
+            trim: 0xceac54,
+            seatColors: {
+              standard: 0x6e1622,
+              premium: 0x841a28,
+              vip: 0x9a5a2c,
+              couple: 0x86203f,
+              accessible: 0x2e4a66,
+            },
+          },
+          hallH: 11.0,
+          screenW: 16,
+          rowSpacing: 1.5,
+          rise: 0.46,
+          curve: 1.1,
+          gapX: 0.76,
+          firstRowZ: -3.2,
+          seatLayout: "Steeply-raked curved fan â€” three blocks widening to the rear",
+          rows: [
+            {
+              r: "A",
+              blocks: [5, 12, 5],
+              cat: "standard",
+              price: 420,
+              section: "Orchestra",
+            },
+            {
+              r: "B",
+              blocks: [5, 12, 5],
+              cat: "standard",
+              price: 420,
+              section: "Orchestra",
+            },
+            {
+              r: "C",
+              blocks: [6, 13, 6],
+              cat: "standard",
+              price: 560,
+              section: "Orchestra",
+            },
+            {
+              r: "D",
+              blocks: [6, 13, 6],
+              cat: "premium",
+              price: 820,
+              section: "Grand Tier",
+            },
+            {
+              r: "E",
+              blocks: [6, 14, 6],
+              cat: "premium",
+              price: 820,
+              section: "Grand Tier",
+            },
+            {
+              r: "F",
+              blocks: [7, 14, 7],
+              cat: "premium",
+              price: 820,
+              section: "Grand Tier",
+            },
+            {
+              r: "G",
+              blocks: [7, 15, 7],
+              cat: "premium",
+              price: 820,
+              section: "Grand Tier",
+            },
+            {
+              r: "H",
+              blocks: [7, 15, 7],
+              cat: "couple",
+              price: 1250,
+              section: "Loge Boxes",
+            },
+            {
+              r: "I",
+              blocks: [7, 14, 7],
+              cat: "vip",
+              price: 1650,
+              section: "Royal Recliner",
+            },
+            {
+              r: "J",
+              blocks: [6, 12, 6],
+              cat: "vip",
+              price: 1650,
+              section: "Royal Recliner",
+            },
+          ],
+          times: ["2:30 PM", "6:00 PM", "9:30 PM"],
+          defaultSeat: "E-13",
+        },
+      ];
 
       async function fetchCinemaData() {
         const [moviesRes, theatresRes] = await Promise.all([
@@ -2694,7 +3156,11 @@
           fetch('http://localhost:8080/api/cinema/theatres'),
         ]);
         MOVIES = await moviesRes.json();
-        THEATRES = await theatresRes.json();
+        const apiTheatres = await theatresRes.json();
+THEATRES = apiTheatres.map((t, i) => ({
+  ...(DEFAULT_THEATRES.find((d) => d.id === t.id) || DEFAULT_THEATRES[i % DEFAULT_THEATRES.length]),
+  ...t,
+}));
 
         // Re-attach procedural draw functions from MOVIE_DRAWERS
         for (const movie of MOVIES) {
@@ -4588,6 +5054,7 @@
           }),
         );
         screenGlow.position.set(0, screenY, zScreen - 0.2 + 0.14);
+        screenGlow.visible = false;
         group.add(screenGlow);
         const hole = new THREE.Mesh(
           new THREE.PlaneGeometry(screenW, screenH),
@@ -6147,6 +6614,17 @@
            trailer (hidden + quiet + light on the GPU); opening RESUMES that
            same trailer. The selection (liveIdx) is sticky across theatres, so
            reopening anywhere picks up the film you chose to watch. */
+           if (localTrailer && localTrailer.src) {
+       videoPaused = !open;
+       if (open) {
+         localTrailer.muted = false;
+         localTrailer.play().catch(() => {});
+       } else {
+         localTrailer.pause();
+       }
+       updatePlayPauseBtn();
+       return;
+     }
         const vl = $("videoLayer");
         const fr = document.getElementById("vFrame");
         const isReactYtActive =
@@ -6302,56 +6780,67 @@
           if (T) {
             T.hole.visible = false;
             T.screenMesh.visible = true;
-            T.screenGlow.visible = true;
+            T.screenGlow.visible = false;
           }
         }
         renderPopover();
         updateTicketMeta();
       }
+      let localTrailer = null;
+       
+        function getLocalTrailerPath() {
+        const activeMovie =
+          (window.currentBookingContext && window.currentBookingContext.movie) ||
+          movie;
+        if (!activeMovie) return null;
+        const text = (
+          (activeMovie.id || "") +
+          " " +
+          (activeMovie.title || "") +
+          " " +
+          (activeMovie.name || "")
+        ).toLowerCase();
+        if (text.includes("kalki"))
+          return "/trailers/Kalki 2898 AD Trailer.mp4";
+        if (text.includes("devara"))
+          return "/trailers/Devara Part -1 Trailer.mp4";
+        if (text.includes("pushpa"))
+          return "/trailers/Pushpa 2 The Rule Trailer.mp4";
+        return null;
+      }
       function streamReactTrailer() {
         try {
-          const ctx = window.currentBookingContext;
-          const id = ctx && ctx.movie && ctx.movie.trailerUrl;
-          if (!id) return false; /* no trailer — keep the painted screen, it is never blank */
-          const layer = $("videoLayer"),
-            fr = $("vFrame");
-          if (!layer || !fr || !T) return false;
-          const d = T.dims,
-            originParam = location.protocol.startsWith("http")
-              ? "&origin=" + encodeURIComponent(location.origin)
-              : "";
-          fr.style.height = Math.round((1280 * d.screenH) / d.screenW) + "px";
-          T.hole.updateMatrixWorld(true);
-          _cssBase
-            .copy(T.hole.matrixWorld)
-            .multiply(
-              new THREE.Matrix4().makeScale(
-                d.screenW / 1280,
-                d.screenW / 1280,
-                1,
-              ),
-            );
-          fr.src =
-            "https://www.youtube.com/embed/" +
-            encodeURIComponent(id) +
-            "?autoplay=1&mute=0&controls=0&modestbranding=1&rel=0&showinfo=0&playsinline=1&loop=1&playlist=" +
-            encodeURIComponent(id) +
-            "&enablejsapi=1" +
-            originParam;
-          layer.classList.add("on");
-          T.hole.visible = true;
-          T.screenMesh.visible = false;
+          const path = getLocalTrailerPath();
+          if (!path || !T) return false;
+       const layer = $("videoLayer");
+       const fr = $("vFrame");
+          if (layer) layer.classList.remove("on");
+          if (fr) fr.src = "";
+          T.hole.visible = false;
+          T.screenMesh.visible = true;
           T.screenGlow.visible = false;
-          T.screenLight.color.set(0x9aa4bd);
-          T.screenLight.intensity = 0.7;
-          T.bounce.color.set(0x9aa4bd);
-          T.bounce.intensity = 0.22;
+          if (!localTrailer) {
+            localTrailer = document.createElement("video");
+            localTrailer.playsInline = true;
+            localTrailer.loop = true;
+            localTrailer.crossOrigin = "anonymous";
+          }
+          const targetSrc = encodeURI(path);
+          if (!localTrailer.src.endsWith(targetSrc)) {
+            localTrailer.src = targetSrc;
+            localTrailer.load();
+          }
+          localTrailer.muted = false;
+          localTrailer.play().catch(() => {
+            localTrailer.muted = true;
+            localTrailer.play().catch(() => {});
+          });
           stage.classList.add("has-video");
           videoPaused = false;
           updatePlayPauseBtn();
           return true;
         } catch (err) {
-          console.error("Failed to stream React trailer:", err);
+          console.error("Failed to play local 3D trailer:", err);
           return false;
         }
       }
@@ -6380,6 +6869,16 @@
         b.title = videoPaused ? "Play video" : "Pause video";
       }
       function toggleVideoPlay() {
+        if (localTrailer && localTrailer.src) {
+       videoPaused = !videoPaused;
+       if (videoPaused) localTrailer.pause();
+       else {
+         localTrailer.muted = false;
+         localTrailer.play().catch(() => {});
+       }
+       updatePlayPauseBtn();
+       return;
+     }
         if (!LIVE[liveIdx].yt && !isReactTrailerActive()) {
           toast("Pick a video first — Movie menu ▸ Live screen");
           return;
@@ -6924,7 +7423,46 @@
           )
             capturePreviewFromSeat();
         }
-
+        if (localTrailer && localTrailer.src) {
+          const isHidden = stage && stage.getBoundingClientRect().width === 0;
+          if (isHidden) {
+            if (!localTrailer.paused) localTrailer.pause();
+          } else {
+            const wantPath = getLocalTrailerPath();
+            if (wantPath && !localTrailer.src.endsWith(encodeURI(wantPath))) {
+              localTrailer.pause();
+              localTrailer.src = encodeURI(wantPath);
+              localTrailer.load();
+              if (curtainOpen && !videoPaused) {
+                localTrailer.play().catch(() => {});
+              }
+            }
+           if (
+              T &&
+              T.screenCanvas &&
+              T.screenTex &&
+              localTrailer.readyState >= 2 &&
+              localTrailer.videoWidth > 0
+            ) {
+              const c = T.screenCanvas;
+              const ctx = c.getContext("2d");
+              const vw = localTrailer.videoWidth;
+              const vh = localTrailer.videoHeight;
+              const vAspect = vw / vh;
+              const cAspect = c.width / c.height;
+              let sx = 0, sy = 0, sw = vw, sh = vh;
+              if (vAspect < cAspect) {
+                sh = vw / cAspect;
+                sy = (vh - sh) / 2;
+              } else {
+                sw = vh * cAspect;
+                sx = (vw - sw) / 2;
+              }
+              ctx.drawImage(localTrailer, sx, sy, sw, sh, 0, 0, c.width, c.height);
+              T.screenTex.needsUpdate = true;
+            }
+        }
+      }
         const streaming =
           !!(LIVE[liveIdx] && LIVE[liveIdx].yt) || isReactTrailerActive();
         if (!streaming) {
@@ -7090,7 +7628,9 @@
         // Initialize from fetched data
         cfg = THEATRES[0];
         movie = MOVIES[0];
-        showTime = cfg.times[1] || cfg.times[0];
+       const times = cfg?.times || cfg?.showTimes || ["10:30 AM", "02:15 PM", "06:30 PM"];
+cfg.times = times;
+showTime = times[1] || times[0];
 
         T = buildTheatre(cfg, scene);
         stage.classList.toggle("has-curtains", !!T.curtainL);
@@ -7122,7 +7662,6 @@
       }
      fetchCinemaData().then(() => {
          init();
-         animate();
 });
     </script>
     <!-- Vercel Web Analytics (Hobby/free): visitors, referrers, countries.
